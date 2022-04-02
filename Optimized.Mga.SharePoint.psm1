@@ -106,7 +106,7 @@ function Download-MgaSharePointFiles {
     }   
     process {
         try {
-            $ContentInBytes = Invoke-WebRequest -Uri $spitem.'@microsoft.graph.downloadUrl'
+            $ContentInBytes = Invoke-WebRequest -Uri $spitem.'@microsoft.graph.downloadUrl' -usebasicparsing
             Write-Verbose "Download-MgaSharePointFiles: process: retrieved $($SPItem.Name) content"
             if ($OutputFolder) {
                 Write-Verbose "Download-MgaSharePointFiles: process: Exporting $($SPItem.Name) content"
